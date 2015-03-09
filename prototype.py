@@ -1,6 +1,9 @@
+import os
 import sys
 
 from django.conf import settings
+
+BASE_DIR = os.path.dirname(__file__)
 
 settings.configure(
   DEBUG=True,
@@ -12,7 +15,8 @@ settings.configure(
     'django.contrib.webdesign',
     'sitebuilder',
   ),
-  STATIC_URL='/STATIC/'
+  STATIC_URL='/STATIC/',
+  SITE_PAGES_DIRECTORY=os.path.join(BASE_DIR, 'pages'),
 )
 
 if __name__ == "__main__":
