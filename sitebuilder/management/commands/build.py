@@ -17,6 +17,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """Request pages and build output."""
+        settings.DEBUG = False
         if os.path.exists(settings.SITE_OUTPUT_DIRECTORY):
             shutil.rmtree(settings.SITE_OUTPUT_DIRECTORY)
         os.mkdir(settings.SITE_OUTPUT_DIRECTORY)
